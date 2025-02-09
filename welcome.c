@@ -1,4 +1,4 @@
-#include "main.h"
+#include "srs.h"
 
 /**
  * This method welcomes and ggreets the user
@@ -6,14 +6,9 @@
  */
 void welcome(char *user)
 {
-	user = malloc(MAXSIZE);
 	
 	printf("Welcome to Miva Open University\n");
-
-	printf("Please enter your name ");
-
-	scanf("%s", user);
-
+	user = input("Please enter your name ");
 	printf("Hello, %s\n", user);
 
 	free(user);
