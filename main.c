@@ -16,20 +16,17 @@ int main(void)
 	username = NULL;
 	welcome(username);
 
+	//main_options(students, student_count)
+
 	student_count += add(students, student_count);
 
-	for (i = 0; students[i] != NULL; i++)
-	{
-		printf("%s scored %.2f\n", students[i]->name, students[i]->score);
-	}
+	display_records(students);
 
 	student_count += remove_student(students, 211);
-	printf("%i------------------------------\n", student_count);
 
-	for (i = 0; students[i] != NULL; i++)
-	{
-		printf("%s scored %.2f\n", students[i]->name, students[i]->score);
-	}
+	display_records(students);
+
+	//free_storage(students);
 	
 	return (EXIT_SUCCESS);
 }

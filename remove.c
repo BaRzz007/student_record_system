@@ -9,7 +9,7 @@ int remove_student(student_t **students, int roll_number)
 	int index;
 	student_t *temp;
 	
-	index = _remove_student(students, roll_number, 0);
+	index = _remove_student(students, roll_number);
 	temp = students[index];
 	free(temp);
 	students[index] = NULL;
@@ -17,25 +17,24 @@ int remove_student(student_t **students, int roll_number)
 	return (-1);
 }
 
-int _remove_student(student_t **students, int roll_number, int count)
+int _remove_student(student_t **students, int roll_number)
 {
 	student_t *temp;
+	int index;
 
-	if (!students || students[count] == NULL)
+	if (!students)
 	{
+		printf("Data storage is empty");
 		return (-1);
 	}
-	else if (students[count]->roll_number == roll_number)
-	{
-		temp = students[count];
-		while (students[count + 1] != NULL)
-		{
-			students[count] = students[count + 1];
-			students[count + 1] = temp;
-			count++;
-		}
-		return (count);
-	}
 
-	return (_remove_student(students, roll_number, count + 1));
+	index = search(students, roll_number, false);
+	temp = students[index];
+	while (students[index + 1] != NULL)
+	{
+		students[index] = students[index + 1];
+		students[index + 1] = temp;
+		index++;
+	}
+	return (index);
 }
