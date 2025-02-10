@@ -8,6 +8,8 @@
 #define MAXSIZE 1024
 #define STUDENT_MAX 1000
 
+#define EXIT_INTERFACE 1
+
 //student property
 #define NAME 1
 #define ROLL_NUMBER 2
@@ -34,7 +36,7 @@ void update(student_t **, int, int);
 void display_records(student_t **);
 void display_record(student_t *);
 void free_storage(student_t **);
-int main_options(student_t **, int);
+int main_options(student_t **, int *);
 void display_main_options();
 void display_prop_option();
 int search(student_t **students, int roll_number, bool display);

@@ -10,12 +10,18 @@
 int add(student_t **students, int student_count)
 {
 	char *name;
-	int roll_number, response;
+	int roll_number, response, index;
 	double score;
 	student_t *student;
 	
-	name = input("Please enter student's name: ");
 	roll_number = input_num("Please enter student's roll number: ");
+	index = search(students, roll_number, false);
+	if (index > -1)
+	{
+		printf("\nRoll number already exists\n");
+		return (add(students, student_count));
+	}
+	name = input("Please enter student's name: ");
 	score = input_num("Please enter student's score: ");
 
 	student = init_student(name, roll_number, score);

@@ -13,7 +13,12 @@ int search(student_t **students, int roll_number, bool display)
 	index = _search(students, roll_number, 0);
 	if (display)
 	{
-		display_record(students[index]);
+		if (index < 0)
+		{
+			printf("No record found\n");
+		}
+		else
+			display_record(students[index]);
 	}
 	return (index);
 }

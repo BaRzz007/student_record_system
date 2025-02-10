@@ -28,7 +28,7 @@ int _remove_student(student_t **students, int roll_number)
 		return (-1);
 	}
 
-	index = search(students, roll_number, false);
+	index = search(students, roll_number, true);
 	temp = students[index];
 	while (students[index + 1] != NULL)
 	{

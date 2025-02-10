@@ -6,16 +6,21 @@
 #define UPDATE 4
 #define SORT 5
 #define AVERAGE 6
-#define EXIT 7
+#define SEARCH 7
+#define EXIT 8
 
 /**
  * This function executes the selected option
  */
-int main_options(student_t **students, int student_count)
+int main_options(student_t **students, int *student_count)
 {
-	int response, roll_number, index, prop;
+	int response, roll_number, index, prop, count;
 
-	printf("There are %i records in the system\n", student_count);
+	count = *student_count;
+	printf("\nThere %s %i record%c in the system\n",
+			*student_count > 1 ? "are": "is",
+			*student_count,
+			*student_count > 1 ? 's': '\0');
 	display_main_options();
 
 	response = input_num("Enter the corresponding number to select an option\n");
@@ -24,21 +29,26 @@ int main_options(student_t **students, int student_count)
 	{
 		case SHOW_ALL:
 			display_records(students);
-			//select_student(students)
+			//select_student(students, index)
 			break;
 		case ADD:
-			add(students, student_count);
+			*student_count += add(students, count);
 			break;
 		case REMOVE:
+			printf("\n=====Remove Student Record=====\n");
 			roll_number = input_num("Enter roll number of student: ");
-			remove_student(students, roll_number);
+			*student_count += remove_student(students, roll_number);
+			printf("Removed Successfully!\n");
 			break;
 		case UPDATE:
+			printf("\n====Updating Student Record====\n");
 			roll_number = input_num("Enter roll number of student: ");
-			index = search(students, roll_number, false);
+			index = search(students, roll_number, true);
 			display_prop_option();
 			prop = input_num("");
 			update(students, index, prop);
+			display_record(students[index]);
+			printf("Updated Successfully!\n");
 			break;
 		case SORT:
 			printf("Do sorting\n");
@@ -46,8 +56,13 @@ int main_options(student_t **students, int student_count)
 		case AVERAGE:
 			printf("Do average\n");
 			break;
+		case SEARCH:
+			roll_number = input_num("Enter roll number to search: ");
+			index = search(students, roll_number, true);
+			//select_student(students, index);
+			break;
 		case EXIT:
-			return (1);
+			return (EXIT_INTERFACE);
 		default:
 			("Please select a valid option");
 	}
@@ -59,7 +74,7 @@ int main_options(student_t **students, int student_count)
  */
 void display_main_options()
 {
-	printf("\n=================================\n");
+	printf("=================================\n");
 	printf("<1> Show all records\n");
 	printf("<2> Add a new record\n");
 	printf("<3> Remove a record\n");
@@ -67,10 +82,11 @@ void display_main_options()
 	printf("<5> Sort records by score\n");
 	printf("<6> Get average score\n");
 	printf("<7> Search by roll number\n");
+	printf("<8> Exit\n");
 }
 
 void display_prop_option()
 {
-	printf("Select property to update");
-	printf("Score <1>\nName <2>\n");
+	printf("Select property to update\n");
+	printf("Name <1>\nRoll Number <2>\nScore <3>\n");
 }

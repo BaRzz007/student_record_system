@@ -16,15 +16,11 @@ int main(void)
 	username = NULL;
 	welcome(username);
 
-	//main_options(students, student_count)
-
-	student_count += add(students, student_count);
-
-	display_records(students);
-
-	student_count += remove_student(students, 211);
-
-	display_records(students);
+	while (true)
+	{
+		if (main_options(students, &student_count) == EXIT_INTERFACE)
+			break;
+	}
 
 	//free_storage(students);
 	
