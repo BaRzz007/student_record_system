@@ -25,8 +25,11 @@ int add(student_t **students, int student_count)
 	score = input_num("Please enter student's score: ");
 
 	student = init_student(name, roll_number, score);
-
-	students[student_count] = student;
+	
+	if (student)
+	{
+		students[student_count] = student;
+	}
 
 	response = input_num("Do you want to add another student?\nYES: 1\nNO: 2\n");
 	

@@ -41,4 +41,6 @@ void display_main_options();
 void display_prop_option();
 int search(student_t **students, int roll_number, bool display);
 int _search(student_t **, int, int);
+double average_score(student_t **students);
+
 #endif

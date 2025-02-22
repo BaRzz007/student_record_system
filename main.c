@@ -16,6 +16,7 @@ int main(void)
 	username = NULL;
 	welcome(username);
 
+	//interface(students, &students_count))
 	while (true)
 	{
 		if (main_options(students, &student_count) == EXIT_INTERFACE)

@@ -15,6 +15,7 @@
 int main_options(student_t **students, int *student_count)
 {
 	int response, roll_number, index, prop, count;
+	double average;
 
 	count = *student_count;
 	printf("\nThere %s %i record%c in the system\n",
@@ -36,25 +37,34 @@ int main_options(student_t **students, int *student_count)
 			break;
 		case REMOVE:
 			printf("\n=====Remove Student Record=====\n");
+
 			roll_number = input_num("Enter roll number of student: ");
 			*student_count += remove_student(students, roll_number);
+
 			printf("Removed Successfully!\n");
 			break;
 		case UPDATE:
 			printf("\n====Updating Student Record====\n");
+
 			roll_number = input_num("Enter roll number of student: ");
 			index = search(students, roll_number, true);
 			display_prop_option();
 			prop = input_num("");
+			
 			update(students, index, prop);
+
 			display_record(students[index]);
 			printf("Updated Successfully!\n");
 			break;
 		case SORT:
 			printf("Do sorting\n");
+
+			//sort(students); the function creates and sorts a copy of the main array 
 			break;
 		case AVERAGE:
-			printf("Do average\n");
+			average = average_score(students);
+
+			printf("\nThe average score is %.2f\n", average);
 			break;
 		case SEARCH:
 			roll_number = input_num("Enter roll number to search: ");
@@ -64,7 +74,7 @@ int main_options(student_t **students, int *student_count)
 		case EXIT:
 			return (EXIT_INTERFACE);
 		default:
-			("Please select a valid option");
+			printf("Please select a valid option");
 	}
 	return (0);
 }

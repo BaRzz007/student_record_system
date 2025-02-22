@@ -10,6 +10,8 @@ int remove_student(student_t **students, int roll_number)
 	student_t *temp;
 	
 	index = _remove_student(students, roll_number);
+
+	//return 0 if index is -1
 	temp = students[index];
 	free(temp);
 	students[index] = NULL;
