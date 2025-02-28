@@ -1,16 +1,16 @@
-Student Record System Project
+# Student Record System Project
 
 
-# How To Run
+## How To Run
 
-**Linux**
+### Linux
 - Usage: Compile and run
 ```
 gcc -Wpedantic -Werror *.c srs.h -o output
 ./output
 ```
 
-**Windows**
+### Windows
 - Install MinGw (Minimalist GNU for Windows)
 - Compiler: GNU (GNU Compiler Collection)
 - Installation: You can install MinGW-w64 which provides 32-bit and 64-bit support.
