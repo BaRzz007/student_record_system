@@ -47,5 +47,7 @@ double average_score(student_t **students);
 void save_to_file(student_t **);
 void interface(student_t **, int *);
 int init_storage(student_t **);
+void sort_records(student_t **, int);
+int compr(const void *, const void *);
 
 #endif
