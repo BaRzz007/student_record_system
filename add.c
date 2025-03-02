@@ -14,21 +14,19 @@ int add_records(student_t **students, int student_count)
 	double score;
 	student_t *student;
 	
-	//roll_number = input_num("Please enter student's roll number: ");
-	//index = search(students, roll_number, false);
-	if (add_record(students, student_count) == EXIT_FAILURE)
+	roll_number = input_num("Please enter student's row number: ");
+	index = search(students, roll_number, false);
+	if (index > -1)
 	{
+		printf("Student row number already exists!\n");
 		return (add_records(students, student_count));
 	}
-	//name = input("Please enter student's name: ");
-	//score = input_num("Please enter student's score: ");
+	name = input("Please enter student's name: ");
+	score = input_num("Please enter student's score: ");
 
-	//student = init_student(name, roll_number, score);
-	
-	//if (student)
-	//{
-	//	students[student_count] = student;
-	//}
+	student = init_student(name, roll_number, score);
+
+	add_record(students, student, student_count);
 
 	response = input_num("Do you want to add another student?\nYES: 1\nNO: 2\n");
 	
@@ -38,28 +36,10 @@ int add_records(student_t **students, int student_count)
 	return (1);
 }
 
-int add_record(student_t **students, int student_count)
+int add_record(student_t **students, student_t *student, int index)
 {
-	char *name;
-	int index, roll_number, response;
-	double score;
-	student_t *student;
-
-	roll_number = input_num("Please enter student's roll number: ");
-	index = search(students, roll_number, false);
-
-	if (index > -1)
-	{
-		printf("Roll number already exists\n");
-		return (EXIT_FAILURE);
-	}
-
-	name = input("Please enter student's name: ");
-	score = input_num("Please enter student's score: ");
-
-	student = init_student(name, roll_number, score);
 	if (student)
-		students[student_count] = student;
+		students[index] = student;
 
-	return (EXIT_SUCCESS);
+	return (1);
 }

@@ -4,8 +4,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
-#define MAXSIZE 1024
+#define BUFSIZE 1024
 #define STUDENT_MAX 1000
 
 #define EXIT_INTERFACE 1
@@ -28,7 +29,7 @@ void welcome(char *username);
 void remark(student_t *student);
 student_t *init_student(char *, int, double);
 int add_records(student_t **, int);
-int add_record(student_t **, int);
+int add_record(student_t **, student_t *, int);
 char *input(char *);
 double input_num(char *);
 int remove_student(student_t **, int);
@@ -45,5 +46,6 @@ int _search(student_t **, int, int);
 double average_score(student_t **students);
 void save_to_file(student_t **);
 void interface(student_t **, int *);
+int init_storage(student_t **);
 
 #endif

@@ -11,7 +11,7 @@ char *input(char *prompt)
 {
 	char *buffer;
 
-	buffer = malloc(MAXSIZE);
+	buffer = malloc(BUFSIZE);
 	printf("%s", prompt);
 	scanf("%s", buffer);
 
@@ -38,6 +38,8 @@ double input_num(char *prompt)
 			fprintf(stderr, "Pleae enter a valid number!\n");
 	}
 	while ((errno != 0) || (*endptr != '\0'));
+
+	free(input_str);
 
 	return (input_num);
 }

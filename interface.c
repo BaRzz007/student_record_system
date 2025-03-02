@@ -19,6 +19,8 @@ int main_options(student_t **students, int *student_count)
 	double average;
 
 	count = *student_count;
+
+	//displays the number of records in the system
 	printf("\nThere %s %i record%c in the system\n",
 			*student_count > 1 ? "are": "is",
 			*student_count,
@@ -39,7 +41,7 @@ int main_options(student_t **students, int *student_count)
 		case REMOVE:
 			printf("\n=====Remove Student Record=====\n");
 
-			roll_number = input_num("Enter roll number of student: ");
+			roll_number = input_num("Enter row number of student: ");
 			*student_count += remove_student(students, roll_number);
 
 			printf("Removed Successfully!\n");
@@ -47,7 +49,7 @@ int main_options(student_t **students, int *student_count)
 		case UPDATE:
 			printf("\n====Updating Student Record====\n");
 
-			roll_number = input_num("Enter roll number of student: ");
+			roll_number = input_num("Enter row number of student: ");
 			index = search(students, roll_number, true);
 			display_prop_option();
 			prop = input_num("");
@@ -68,7 +70,7 @@ int main_options(student_t **students, int *student_count)
 			printf("\nThe average score is %.2f\n", average);
 			break;
 		case SEARCH:
-			roll_number = input_num("Enter roll number to search: ");
+			roll_number = input_num("Enter row number to search: ");
 			index = search(students, roll_number, true);
 			//select_student(students, index);
 			break;
@@ -98,14 +100,14 @@ void display_main_options()
 	printf("<5> Save\n");
 	printf("<6> Sort records by score\n");
 	printf("<7> Get average score\n");
-	printf("<8> Search by roll number\n");
+	printf("<8> Search by row number\n");
 	printf("<9> Exit\n");
 }
 
 void display_prop_option()
 {
 	printf("Select property to update\n");
-	printf("Name <1>\nRoll Number <2>\nScore <3>\n");
+	printf("<1> Name\n<2> Row Number\n<3> Score\n");
 }
 
 /**

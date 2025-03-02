@@ -13,8 +13,7 @@ int main(void)
 	student_t *students[STUDENT_MAX];
 
 	//initialize the storage system
-	student_count = 0;
-	//init_storage(students);
+	student_count = init_storage(students);
 	
 	//Welcome the user
 	welcome(username);
