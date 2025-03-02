@@ -60,7 +60,7 @@ int main_options(student_t **students, int *student_count)
 			printf("Updated Successfully!\n");
 			break;
 		case SORT:
-			printf("\n=====Sorted by score==\n");
+			printf("\n=====Sorting by score==\n");
 			sort_records(students, count);
 
 			//sort(students); the function creates and sorts a copy of the main array 

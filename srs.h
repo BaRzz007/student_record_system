@@ -48,6 +48,7 @@ void save_to_file(student_t **);
 void interface(student_t **, int *);
 int init_storage(student_t **);
 void sort_records(student_t **, int);
-int compr(const void *, const void *);
+int compr_desc(const void *, const void *);
+int compr_asc(const void *, const void *);
 
 #endif
