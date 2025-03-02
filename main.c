@@ -12,16 +12,15 @@ int main(void)
 	char *username;
 	student_t *students[STUDENT_MAX];
 
+	//initialize the storage system
 	student_count = 0;
-	username = NULL;
+	//init_storage(students);
+	
+	//Welcome the user
 	welcome(username);
 
-	//interface(students, &students_count))
-	while (true)
-	{
-		if (main_options(students, &student_count) == EXIT_INTERFACE)
-			break;
-	}
+	//The interactive interface to the system
+	interface(students, &student_count);
 
 	//free_storage(students);
 	

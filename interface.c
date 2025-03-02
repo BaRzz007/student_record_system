@@ -4,10 +4,11 @@
 #define ADD 2
 #define REMOVE 3
 #define UPDATE 4
-#define SORT 5
-#define AVERAGE 6
-#define SEARCH 7
-#define EXIT 8
+#define SAVE 5
+#define SORT 6
+#define AVERAGE 7
+#define SEARCH 8
+#define EXIT 9
 
 /**
  * This function executes the selected option
@@ -33,7 +34,7 @@ int main_options(student_t **students, int *student_count)
 			//select_student(students, index)
 			break;
 		case ADD:
-			*student_count += add(students, count);
+			*student_count += add_records(students, count);
 			break;
 		case REMOVE:
 			printf("\n=====Remove Student Record=====\n");
@@ -71,7 +72,12 @@ int main_options(student_t **students, int *student_count)
 			index = search(students, roll_number, true);
 			//select_student(students, index);
 			break;
+		case SAVE:
+			save_to_file(students);
+			printf("The records have been saved!\n");
+			break;
 		case EXIT:
+			save_to_file(students);
 			return (EXIT_INTERFACE);
 		default:
 			printf("Please select a valid option");
@@ -89,14 +95,27 @@ void display_main_options()
 	printf("<2> Add a new record\n");
 	printf("<3> Remove a record\n");
 	printf("<4> Update a record\n");
-	printf("<5> Sort records by score\n");
-	printf("<6> Get average score\n");
-	printf("<7> Search by roll number\n");
-	printf("<8> Exit\n");
+	printf("<5> Save\n");
+	printf("<6> Sort records by score\n");
+	printf("<7> Get average score\n");
+	printf("<8> Search by roll number\n");
+	printf("<9> Exit\n");
 }
 
 void display_prop_option()
 {
 	printf("Select property to update\n");
 	printf("Name <1>\nRoll Number <2>\nScore <3>\n");
+}
+
+/**
+ * The interface
+ */
+void interface(student_t **students, int *student_count)
+{
+	while (true)
+	{
+		if (main_options(students, student_count) == EXIT_INTERFACE)
+			break;
+	}
 }

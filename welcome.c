@@ -6,6 +6,7 @@
  */
 void welcome(char *user)
 {
+	user = NULL;
 	
 	printf("Welcome to Miva Open University\n");
 	user = input("Please enter your name ");

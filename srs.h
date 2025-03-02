@@ -27,7 +27,8 @@ typedef struct student student_t;
 void welcome(char *username);
 void remark(student_t *student);
 student_t *init_student(char *, int, double);
-int add(student_t **, int);
+int add_records(student_t **, int);
+int add_record(student_t **, int);
 char *input(char *);
 double input_num(char *);
 int remove_student(student_t **, int);
@@ -42,5 +43,7 @@ void display_prop_option();
 int search(student_t **students, int roll_number, bool display);
 int _search(student_t **, int, int);
 double average_score(student_t **students);
+void save_to_file(student_t **);
+void interface(student_t **, int *);
 
 #endif
