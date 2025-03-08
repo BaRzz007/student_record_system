@@ -21,7 +21,8 @@ int main(void)
 	//The interactive interface to the system
 	interface(students, &student_count);
 
-	//free_storage(students);
+	//Free the memory bbefore exit
+	free_storage(students);
 	
 	return (EXIT_SUCCESS);
 }

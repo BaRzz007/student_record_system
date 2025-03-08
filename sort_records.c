@@ -15,8 +15,7 @@ void sort_records(student_t **students, int student_count)
 	for (i = 0; students[i] != NULL; i++)
 		sorted_arr[i] = students[i];
 
-	printf("<1> Ascending\n<2> Descending (Default)\n");
-	sortarr = input_num("");
+	sortarr = input_num("<1> Ascending\n<2> Descending (Default)\n");
 
 	if (sortarr == ASCENDING)
 	{

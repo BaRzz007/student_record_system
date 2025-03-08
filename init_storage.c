@@ -5,12 +5,16 @@
  */
 int init_storage(student_t **students)
 {
-	int count, n, roll_number, *roll_num_ptr;
+	int count, n, roll_number, *roll_num_ptr, i;
 	double score, *score_ptr;
 	char *name, *nameptr;
 	FILE *file;
 	student_t *student;
 
+	for (i = 0; i < STUDENT_MAX; i++)
+	{
+		students[i] = NULL;
+	}
 	//initialize count to keep track of the number of records in the system 
 	count = 0;
 

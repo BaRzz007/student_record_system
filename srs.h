@@ -50,5 +50,6 @@ int init_storage(student_t **);
 void sort_records(student_t **, int);
 int compr_desc(const void *, const void *);
 int compr_asc(const void *, const void *);
+void free_storage(student_t **);
 
 #endif
