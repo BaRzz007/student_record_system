@@ -9,6 +9,7 @@ void display_records(student_t **students)
 	int i;
 
 	printf("\n===========Student Records=============\n");
+
 	for (i = 0; students[i] != NULL; i++)
 	{
 		printf("=====INDEX: %i=====\n", i + 1);

@@ -33,6 +33,7 @@ double input_num(char *prompt)
 	{
 		errno = 0;
 		input_str = input(prompt);
+		//convert string to its numeric value
 		input_num = strtod(input_str, &endptr);
 		if (errno != 0 || *endptr != '\0')
 			fprintf(stderr, "Pleae enter a valid number!\n");

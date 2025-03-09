@@ -61,9 +61,7 @@ int main_options(student_t **students, int *student_count)
 			break;
 		case SORT:
 			printf("\n=====Sorting by score==\n");
-			sort_records(students, count);
-
-			//sort(students); the function creates and sorts a copy of the main array 
+			sort_records(students, count); 
 			break;
 		case AVERAGE:
 			average = average_score(students);
@@ -72,7 +70,7 @@ int main_options(student_t **students, int *student_count)
 			break;
 		case SEARCH:
 			roll_number = input_num("Enter row number to search: ");
-			index = search(students, roll_number, true);
+			search(students, roll_number, true);
 			//select_student(students, index);
 			break;
 		case SAVE:
