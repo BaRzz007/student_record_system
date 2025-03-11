@@ -12,7 +12,12 @@ void free_storage(student_t **students)
 
 	for (i = 0; students[i] != NULL; i++)
 	{
-		free(students[i]->name);
-		free(students[i]);
+		free_student(students[i]);
 	}
+}
+
+void free_student(student_t *student)
+{
+	free(student->name);
+	free(student);
 }

@@ -15,8 +15,8 @@ int add_records(student_t **students, int student_count)
 	student_t *student;
 	
 	roll_number = input_num("Please enter student's row number: ");
-	index = search(students, roll_number, false);
-	if (index > -1)
+	student = get_student(students, roll_number);
+	if (student)
 	{
 		printf("Student row number already exists!\n");
 		return (add_records(students, student_count));

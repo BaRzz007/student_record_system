@@ -17,6 +17,7 @@ int main_options(student_t **students, int *student_count)
 {
 	int response, roll_number, index, prop, count;
 	double average;
+	student_t *student;
 
 	count = *student_count;
 
@@ -41,23 +42,33 @@ int main_options(student_t **students, int *student_count)
 		case REMOVE:
 			printf("\n=====Remove Student Record=====\n");
 
+			if (!students || *students == NULL)
+			{
+				printf("\nStorage is empty!\n");
+				break;
+			}
+
 			roll_number = input_num("Enter row number of student: ");
 			*student_count += remove_student(students, roll_number);
 
-			printf("Removed Successfully!\n");
+			//printf("Removed Successfully!\n");
 			break;
 		case UPDATE:
 			printf("\n====Updating Student Record====\n");
 
-			roll_number = input_num("Enter row number of student: ");
-			index = search(students, roll_number, true);
-			display_prop_option();
-			prop = input_num("");
-			
-			update(students, index, prop);
+			student = NULL;
 
-			display_record(students[index]);
-			printf("Updated Successfully!\n");
+			roll_number = input_num("Enter row number of student: ");
+			student = get_student(students, roll_number);
+			if (!student)
+				printf("\nNo student with row number %i was found!\n", roll_number);
+			else
+			{
+				display_record(student);
+				update(student);
+				display_record(student);
+				printf("Updated Successfully!\n");
+			}
 			break;
 		case SORT:
 			printf("\n=====Sorting by score==\n");
@@ -69,8 +80,10 @@ int main_options(student_t **students, int *student_count)
 			printf("\nThe average score is %.2f\n", average);
 			break;
 		case SEARCH:
+			student = NULL;
 			roll_number = input_num("Enter row number to search: ");
-			search(students, roll_number, true);
+			student = get_student(students, roll_number);
+			display_record(student);
 			//select_student(students, index);
 			break;
 		case SAVE:

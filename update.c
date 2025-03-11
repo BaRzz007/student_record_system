@@ -4,11 +4,12 @@
  * This function updates the information of a student
  */
 
-void update(student_t **students, int index, int prop)
+void update(student_t *student)
 {
-	student_t *student;
+	int prop;
 
-	student = students[index];
+	display_prop_option();
+	prop = input_num("");
 
 	switch (prop)
 	{

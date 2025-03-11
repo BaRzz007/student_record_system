@@ -33,15 +33,15 @@ int add_record(student_t **, student_t *, int);
 char *input(char *);
 double input_num(char *);
 int remove_student(student_t **, int);
-int _remove_student(student_t **, int);
-void update(student_t **, int, int);
+student_t *_remove_student(student_t **, int);
+void update(student_t *);
 void display_records(student_t **);
 void display_record(student_t *);
 void free_storage(student_t **);
 int main_options(student_t **, int *);
 void display_main_options();
 void display_prop_option();
-int search(student_t **students, int roll_number, bool display);
+student_t *get_student(student_t **students, int roll_number);
 int _search(student_t **, int, int);
 double average_score(student_t **students);
 void save_to_file(student_t **);
@@ -51,5 +51,6 @@ void sort_records(student_t **, int);
 int compr_desc(const void *, const void *);
 int compr_asc(const void *, const void *);
 void free_storage(student_t **);
+void free_student(student_t *);
 
 #endif

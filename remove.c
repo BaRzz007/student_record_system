@@ -8,29 +8,37 @@ int remove_student(student_t **students, int roll_number)
 {
 	int index;
 	student_t *temp;
-	
-	index = _remove_student(students, roll_number);
 
-	//return 0 if index is -1
-	temp = students[index];
-	free(temp);
-	students[index] = NULL;
+	if (!students)
+	{
+		printf("\nStorage is empty!\n");
+		return (0);
+	}
+	
+	temp = NULL;
+	index = _search(students, roll_number, 0);
+
+	if (index < 0)
+	{
+		printf("\nNo record with row number %i exists!\n", roll_number);
+		return (0);
+	}
+	temp = _remove_student(students, index);
+	free_student(temp);
+	printf("\nRemoved Successfully!\n");
 
 	return (-1);
 }
 
-int _remove_student(student_t **students, int roll_number)
+/**
+ * removes a student from the storage
+ */
+student_t *_remove_student(student_t **students, int index)
 {
 	student_t *temp;
-	int index;
 
-	if (!students)
-	{
-		printf("Data storage is empty");
-		return (-1);
-	}
-
-	index = search(students, roll_number, true);
+	//move the student marked for removal to the end of the array
+	temp = NULL;
 	temp = students[index];
 	while (students[index + 1] != NULL)
 	{
@@ -38,5 +46,8 @@ int _remove_student(student_t **students, int roll_number)
 		students[index + 1] = temp;
 		index++;
 	}
-	return (index);
+
+	//students[index] = NULL;
+
+	return (temp);
 }

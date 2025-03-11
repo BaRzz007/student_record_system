@@ -5,28 +5,21 @@
  * Displays record if @display is set to true
  * Return: index of the record
  */
-int search(student_t **students, int roll_number, bool display)
+student_t *get_student(student_t **students, int roll_number)
 {
 	int index;
-	student_t *student;
 
 	index = _search(students, roll_number, 0);
-	if (display)
-	{
-		if (index < 0)
-		{
-			printf("No record found\n");
-		}
-		else
-			display_record(students[index]);
-	}
-	return (index);
+
+	if (index < 0)
+		return (NULL);
+
+	return (students[index]);
 }
 
 /**
  * internal recursive search function
  */
-
 int _search(student_t **students, int roll_number, int count)
 {
 	if (!students || students[count] == NULL)
