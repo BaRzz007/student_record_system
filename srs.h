@@ -25,7 +25,7 @@ struct student
 
 typedef struct student student_t;
 
-char *welcome();
+char *welcome(void);
 void remark(student_t *student);
 student_t *init_student(char *, int, double);
 int add_records(student_t **, int);
@@ -39,8 +39,8 @@ void display_records(student_t **);
 void display_record(student_t *);
 void free_storage(student_t **);
 int main_options(student_t **, int *);
-void display_main_options();
-void display_prop_option();
+void display_main_options(void);
+void display_prop_option(void);
 student_t *get_student(student_t **students, int roll_number);
 int _search(student_t **, int, int);
 double average_score(student_t **students);
