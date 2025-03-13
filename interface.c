@@ -83,6 +83,11 @@ int main_options(student_t **students, int *student_count)
 			student = NULL;
 			roll_number = input_num("Enter row number to search: ");
 			student = get_student(students, roll_number);
+			if (!student)
+			{
+				printf("\nNo student with row number %i was found!\n", roll_number);
+				break;
+			}
 			display_record(student);
 			//select_student(students, index);
 			break;

@@ -25,7 +25,7 @@ struct student
 
 typedef struct student student_t;
 
-void welcome(char *username);
+char *welcome();
 void remark(student_t *student);
 student_t *init_student(char *, int, double);
 int add_records(student_t **, int);
@@ -52,5 +52,6 @@ int compr_desc(const void *, const void *);
 int compr_asc(const void *, const void *);
 void free_storage(student_t **);
 void free_student(student_t *);
+void bye(char *);
 
 #endif

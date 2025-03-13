@@ -24,5 +24,5 @@ void display_record(student_t *student)
 		student->roll_number,
 		student->name,
 		student->score,
-		student->score > 40 ? "Passed": "Failed");
+		student->score >= 40 ? "Passed": "Failed");
 }

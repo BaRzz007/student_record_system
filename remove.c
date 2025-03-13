@@ -24,6 +24,7 @@ int remove_student(student_t **students, int roll_number)
 		return (0);
 	}
 	temp = _remove_student(students, index);
+	display_record(temp);
 	free_student(temp);
 	printf("\nRemoved Successfully!\n");
 
@@ -47,7 +48,7 @@ student_t *_remove_student(student_t **students, int index)
 		index++;
 	}
 
-	//students[index] = NULL;
+	students[index] = NULL;
 
 	return (temp);
 }

@@ -4,13 +4,13 @@
  * This method welcomes and ggreets the user
  *
  */
-void welcome(char *user)
+char *welcome()
 {
-	user = NULL;
+	char *user = NULL;
 	
 	printf("Welcome to Miva Open University\n");
 	user = input("Please enter your name ");
 	printf("\n=======Hello, %s=======\n", user);
 
-	free(user);
+	return (user);
 }
