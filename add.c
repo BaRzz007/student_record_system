@@ -26,7 +26,7 @@ int add_records(student_t **students, int student_count)
 	{
 		score = input_num("Please enter student's score: ");
 		if (score > 100)
-			printf("Score cannot be more than 100\n");
+			printf("\nScore cannot be more than 100\n");
 	}
 	while (score > 100);
 

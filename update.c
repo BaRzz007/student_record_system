@@ -20,9 +20,16 @@ void update(student_t *student)
 			student->roll_number = input_num("Enter new roll number for student: ");
 			break;
 		case SCORE:
-			student->score = input_num("Enter new score: ");
+			do
+			{
+				student->score = input_num("Enter new score: ");
+				if (student->score > 100)
+					printf("\nScore cannot be more than 100\n");
+			}
+			while (student->score > 100);
 			break;
 		default:
 			printf("Invalid selection\n");
+			update(student);
 	}
 }
