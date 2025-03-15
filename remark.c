@@ -8,7 +8,7 @@
 void remark(student_t *student)
 {
 	if (student->score < 40)
-		printf("%s failed with %.2f marks\n", student->name, student->score);
+		printf("\n%s failed with %.2f marks\n", student->name, student->score);
 	else
-		printf("%s passed with %.2f marks\n", student->name, student->score);
+		printf("\n%s passed with %.2f marks\n", student->name, student->score);
 }

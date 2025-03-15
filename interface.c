@@ -4,11 +4,12 @@
 #define ADD 2
 #define REMOVE 3
 #define UPDATE 4
-#define SAVE 5
-#define SORT 6
-#define AVERAGE 7
-#define SEARCH 8
-#define EXIT 9
+#define REMARK 5
+#define SAVE 6
+#define SORT 7
+#define AVERAGE 8
+#define SEARCH 9
+#define EXIT 10
 
 /**
  * This function executes the selected option
@@ -50,13 +51,11 @@ int main_options(student_t **students, int *student_count)
 
 			roll_number = input_num("Enter row number of student: ");
 			*student_count += remove_student(students, roll_number);
-
-			//printf("Removed Successfully!\n");
 			break;
 		case UPDATE:
 			printf("\n====Updating Student Record====\n");
 
-			student = NULL;
+			//student = NULL;
 
 			roll_number = input_num("Enter row number of student: ");
 			student = get_student(students, roll_number);
@@ -69,6 +68,11 @@ int main_options(student_t **students, int *student_count)
 				display_record(student);
 				printf("Updated Successfully!\n");
 			}
+			break;
+		case REMARK:
+			roll_number = input_num("Please enter student's row number: ");
+			student = get_student(students, roll_number);
+			remark(student);
 			break;
 		case SORT:
 			printf("\n=====Sorting by score==\n");
@@ -114,11 +118,12 @@ void display_main_options()
 	printf("<2> Add a new record\n");
 	printf("<3> Remove a record\n");
 	printf("<4> Update a record\n");
-	printf("<5> Save\n");
-	printf("<6> Sort records by score\n");
-	printf("<7> Get average score\n");
-	printf("<8> Search by row number\n");
-	printf("<9> Exit\n");
+	printf("<5> Score Remark\n");
+	printf("<6> Save\n");
+	printf("<7> Sort records by score\n");
+	printf("<8> Get average score\n");
+	printf("<9> Search by row number\n");
+	printf("<10> Exit\n");
 }
 
 void display_prop_option()
