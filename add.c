@@ -22,7 +22,13 @@ int add_records(student_t **students, int student_count)
 		return (add_records(students, student_count));
 	}
 	name = input("Please enter student's name: ");
-	score = input_num("Please enter student's score: ");
+	do
+	{
+		score = input_num("Please enter student's score: ");
+		if (score > 100)
+			printf("Score cannot be more than 100\n");
+	}
+	while (score > 100);
 
 	student = init_student(name, roll_number, score);
 
