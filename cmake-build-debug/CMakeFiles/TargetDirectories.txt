@@ -1,0 +1,3 @@
+/home/barzz/Documents/student_record_system/cmake-build-debug/CMakeFiles/student_record_system.dir
+/home/barzz/Documents/student_record_system/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/barzz/Documents/student_record_system/cmake-build-debug/CMakeFiles/rebuild_cache.dir

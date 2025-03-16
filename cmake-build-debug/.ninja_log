@@ -1,0 +1,19 @@
+# ninja log v6
+2	49	1742135368838118774	CMakeFiles/student_record_system.dir/main.c.o	7043aef36e864b91
+50	93	1742135368886121118	CMakeFiles/student_record_system.dir/bye.c.o	2ca5e28e31514dc8
+4	118	1742135368840118872	CMakeFiles/student_record_system.dir/average_score.c.o	4f273a3add1b0148
+4	122	1742135368840118872	CMakeFiles/student_record_system.dir/add.c.o	f6b88e392e7c755
+93	156	1742135368929123218	CMakeFiles/student_record_system.dir/display_records.c.o	73e0e60ff31cb3c8
+122	178	1742135368958124634	CMakeFiles/student_record_system.dir/get_input.c.o	8b999ce20cce3eff
+118	182	1742135368954124438	CMakeFiles/student_record_system.dir/free_storage.c.o	9fdab1e8138b9359
+157	220	1742135368993126343	CMakeFiles/student_record_system.dir/init_storage.c.o	2b8f65806f15f2d8
+178	242	1742135369015127417	CMakeFiles/student_record_system.dir/init_student.c.o	c63ff397ee35d83d
+182	246	1742135369018127563	CMakeFiles/student_record_system.dir/interface.c.o	901c73db4d3ed3c
+221	304	1742135369058129515	CMakeFiles/student_record_system.dir/remark.c.o	3b9f83d6413e06a5
+243	316	1742135369079130539	CMakeFiles/student_record_system.dir/remove.c.o	e7b8134bf0507844
+246	322	1742135369083130735	CMakeFiles/student_record_system.dir/save.c.o	81474b5c50a04fc2
+305	388	1742135369141133564	CMakeFiles/student_record_system.dir/search.c.o	c97c8efb04d7bfae
+323	394	1742135369159134443	CMakeFiles/student_record_system.dir/update.c.o	d32acfeda7c92c8
+317	398	1742135369153134150	CMakeFiles/student_record_system.dir/sort_records.c.o	899c44733b08fb13
+388	442	1742135369226137712	CMakeFiles/student_record_system.dir/welcome.c.o	294564e4b6f6efe6
+442	479	1742135369278140249	student_record_system	2d704d10abc873bb
